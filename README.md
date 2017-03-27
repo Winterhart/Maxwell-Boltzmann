@@ -1,55 +1,43 @@
-# Project Title
+# Maxwell-BoltzmannDistributionWPF
 
-One Paragraph of project description goes here
+Simulation of the Maxwell-Boltzmann Distribution using WPF framework from Microsoft,
+
 
 ## Getting Started
 
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
+#### Clone the Repo and open the `Maxwell-BoltzmannDistribution.sln` file inside Visual Studio
+####  OR install the Application to use the Software see Installing
 
 ### Prerequisites
 
 What things you need to install the software and how to install them
 
 ```
-Give examples
+A Windows Machine to Install the WPF application
 ```
 
 ### Installing
 
 A step by step series of examples that tell you have to get a development env running
-
-Say what the step will be
+```
+Download the Folder in .zip
+Unzip the zip
+Go inside Maxwell-BoltzmannDistributionWPF/BuiltSoftware
+Double Click on Setup.exe
+Install the WPF application
 
 ```
-Give the example
-```
-
-And repeat
-
-```
-until finished
-```
-
-End with an example of getting some data out of the system or using it for a little demo
 
 ## Running the tests
 
-Explain how to run the automated tests for this system
-
-### Break down into end to end tests
-
-Explain what these tests test and why
-
-```
-Give an example
-```
+Tests were made manually !
 
 ### And coding style tests
 
-Explain what these tests test and why
-
 ```
-Give an example
+Constant: VARIABLE_NAME
+Variable shared: VariableShared
+Temporary Variable: tmpvariable
 ```
 
 ## Deployment
@@ -73,7 +61,6 @@ Nothing yet
 
 * **Charles-Antoine Hardy** - *Initial work* - [Winterhart](https://github.com/Winterhart)
 
-See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
 
 ## License
 
@@ -81,7 +68,6 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 
 ## Acknowledgments
 
-* Hat tip to anyone who's code was used
-* Inspiration
+* Thermodynamic Maxwell-Boltzmann Distribution
 * etc
 

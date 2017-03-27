@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Maxwell_BoltzmannDistribution.Controller;
 
 namespace Maxwell_BoltzmannDistribution
 {
@@ -20,9 +21,17 @@ namespace Maxwell_BoltzmannDistribution
     /// </summary>
     public partial class MainWindow : Window
     {
+        MainController MC;
         public MainWindow()
         {
+            MC = new MainController();
             InitializeComponent();
         }
+
+        private void Start_Sim(object sender, RoutedEventArgs e)
+        {
+
+        }
+
     }
 }

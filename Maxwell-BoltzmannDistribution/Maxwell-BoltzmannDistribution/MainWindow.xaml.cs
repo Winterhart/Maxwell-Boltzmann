@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using Maxwell_BoltzmannDistribution.Controller;
+using Maxwell_BoltzmannDistribution.Models;
 
 namespace Maxwell_BoltzmannDistribution
 {
@@ -30,6 +31,29 @@ namespace Maxwell_BoltzmannDistribution
 
         private void Start_Sim(object sender, RoutedEventArgs e)
         {
+            // Hard coded simulation for starting
+            Simulation_Constant.BOX_HEIGHT = 1.5;
+            Simulation_Constant.BOX_WIDTH = 1.5;
+            Simulation_Constant.INITIAL_SPEED = 10;
+            Simulation_Constant.NUMBER_OF_PARTICULE = 5;
+            Simulation_Constant.PARTICULE_RADIUS = 0.00001;
+            Simulation_Constant.TIME_IN_SECONDS = 10;
+
+            Simulation_Constant.FLAG_END_SIMULATION = false;
+            try
+            {
+                MC.StartSimulation();
+            }
+            catch (Exception ee)
+            {
+                Console.WriteLine(ee.Message);
+            }
+            while (!Simulation_Constant.FLAG_END_SIMULATION)
+            {
+                Mouse.OverrideCursor = Cursors.Wait;
+            }
+            Mouse.OverrideCursor = null;
+       
 
         }
 

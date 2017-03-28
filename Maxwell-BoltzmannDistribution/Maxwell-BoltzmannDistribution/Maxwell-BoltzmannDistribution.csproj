@@ -53,6 +53,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Models\Simulation_Constant.cs" />
     <Compile Include="Simulation\MainSimulation.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -70,7 +71,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Models\Box.cs" />
-    <Compile Include="Models\Particules.cs" />
+    <Compile Include="Models\Particule.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>

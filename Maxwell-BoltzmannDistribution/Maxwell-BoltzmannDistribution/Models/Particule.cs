@@ -30,11 +30,18 @@ namespace Maxwell_BoltzmannDistribution.Models
             double FactorSX = Simulation_Constant.RANDOM.NextDouble();
             this.SpeedX = Math.Sqrt(initialSpeed * initialSpeed * FactorSX);
             this.SpeedY = Math.Sqrt((1- FactorSX) * initialSpeed * initialSpeed);
-            
+            bool SideX = Simulation_Constant.RANDOM.Next(100) % 2 == 0;
+            bool SideY = Simulation_Constant.RANDOM.Next(100) % 2 == 0;
+
+            if (!SideX) { this.SpeedX = this.SpeedX * -1; }
+            if (!SideY) { this.SpeedY = this.SpeedY * -1; }  
+
             // Compute direction...
+
+
+
         }
 
-        
         internal double GetPositionX()
         {
             return this.PositionX;

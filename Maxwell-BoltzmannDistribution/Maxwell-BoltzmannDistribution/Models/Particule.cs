@@ -36,12 +36,30 @@ namespace Maxwell_BoltzmannDistribution.Models
             if (!SideX) { this.SpeedX = this.SpeedX * -1; }
             if (!SideY) { this.SpeedY = this.SpeedY * -1; }  
 
-            // Compute direction...
+           
 
 
 
         }
 
+        internal double getSpeed(Particule particule)
+        {
+            return Math.Sqrt((particule.SpeedX * particule.SpeedX) + (particule.SpeedY * particule.SpeedY));
+        }
+        internal Boolean ParticulesInContact(Particule other){
+            return GetDistanceTo(other) < (2* Simulation_Constant.PARTICULE_RADIUS);
+        }
+        internal double GetDistanceTo(Particule other)
+        {
+            double distance = Math.Sqrt(((this.PositionX - other.PositionX) * (this.PositionX - other.PositionX)) + ((this.PositionY - other.PositionY) * (this.PositionY - other.PositionY)));
+            return distance;
+        }
+        internal void movePaticule(double TimeH){
+            this.PositionX = this.PositionX + (this.SpeedX * TimeH);
+            this.PositionY = this.PositionY + ((this.SpeedY * TimeH) - ((Simulation_Constant.CURRENT_GRAVITY * TimeH * TimeH)/2 ));
+
+
+        }
         internal double GetPositionX()
         {
             return this.PositionX;
@@ -62,6 +80,7 @@ namespace Maxwell_BoltzmannDistribution.Models
         {
             return this.Id;
         }
+        
 
         // Add all function...
         // Compute direction by using Speed X, Speed Y

@@ -19,6 +19,7 @@ namespace Maxwell_BoltzmannDistribution.Models
         public static int TIME_IN_SECONDS { get; set; }
         public static bool FLAG_END_SIMULATION { get; set; }
         public static Random RANDOM = new Random();
+        public static double CURRENT_GRAVITY { get; set; }
 
     }
 }

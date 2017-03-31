@@ -20,6 +20,7 @@ namespace Maxwell_BoltzmannDistribution.Models
         public static bool FLAG_END_SIMULATION { get; set; }
         public static Random RANDOM = new Random();
         public static double CURRENT_GRAVITY { get; set; }
+        public static double SPEED_LOSS_FACTOR { get; set; }
 
     }
 }

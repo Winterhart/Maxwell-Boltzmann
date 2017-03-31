@@ -37,10 +37,12 @@ namespace Maxwell_BoltzmannDistribution.Simulation
             }
 
             Console.WriteLine("ALL Particule are created");
-            foreach (Particule p in AllParticules)
-            {
-                Console.WriteLine("This particule ID: " + p.GetID() + " is @ X:  " + p.GetPositionX() + "@Y : " + p.GetPositionY());
-            }
+            Console.WriteLine(AllParticules[0].PrintParticuleInfo());
+            AllParticules[0].movePaticule(0.001);
+            Console.WriteLine(AllParticules[0].PrintParticuleInfo());
+            AllParticules[0].movePaticule(0.01);
+            Console.WriteLine(AllParticules[0].PrintParticuleInfo());
+
 
 
                 // Throw that before Quiting...

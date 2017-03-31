@@ -41,7 +41,18 @@ namespace Maxwell_BoltzmannDistribution.Models
 
 
         }
-
+        internal void CollisionWithVerticalWall(Particule particule)
+        {
+            double ResizeFactor = Math.Sqrt(Simulation_Constant.SPEED_LOSS_FACTOR);
+            particule.SpeedX = (particule.SpeedX * -1 * ResizeFactor);
+            particule.SpeedY = (particule.SpeedY * ResizeFactor);
+        }
+        internal void CollisionWithHorizontalWall(Particule particule)
+        {
+            double ResizeFactor = Math.Sqrt(Simulation_Constant.SPEED_LOSS_FACTOR);
+            particule.SpeedX = (particule.SpeedX * ResizeFactor);
+            particule.SpeedY = (particule.SpeedY * -1 * ResizeFactor);
+        }
         internal double getSpeed(Particule particule)
         {
             return Math.Sqrt((particule.SpeedX * particule.SpeedX) + (particule.SpeedY * particule.SpeedY));
@@ -57,6 +68,8 @@ namespace Maxwell_BoltzmannDistribution.Models
         internal void movePaticule(double TimeH){
             this.PositionX = this.PositionX + (this.SpeedX * TimeH);
             this.PositionY = this.PositionY + ((this.SpeedY * TimeH) - ((Simulation_Constant.CURRENT_GRAVITY * TimeH * TimeH)/2 ));
+            this.SpeedY = (this.SpeedY - (Simulation_Constant.CURRENT_GRAVITY * TimeH));
+
 
 
         }
@@ -79,6 +92,12 @@ namespace Maxwell_BoltzmannDistribution.Models
         internal int GetID()
         {
             return this.Id;
+        }
+        internal String PrintParticuleInfo()
+        {
+            String info = "P: " + this.Id + ",  @X: " + this.PositionX +"m, "+  "  @Y: " + this.PositionY +
+                "m,  Speed@X: " + this.SpeedX + "m/s, Speed@Y " + this.SpeedY;
+            return info;
         }
         
 

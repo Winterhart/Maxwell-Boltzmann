@@ -41,15 +41,51 @@ namespace Maxwell_BoltzmannDistribution.Models
 
 
         }
+        internal void CollisionWithOtherParticule(Particule other)
+        {
+            // The particule A is denoted by this
+            // The particle B is denoted by other
+
+            // Difference on X axis & Y axis
+            double DiffX = Math.Abs(this.PositionX - other.PositionX);
+            double DiffY = Math.Abs(this.PositionY - other.PositionY);
+            // Distance Between the two...
+            double DistanceBetween = Math.Sqrt((DiffX * DiffX) + (DiffY * DiffY));
+
+            // Speed Difference 
+            double DiffSpeedX = this.SpeedX - other.SpeedX;
+            double DiffSpeedY = this.SpeedY - other.SpeedY;
+
+            // Compute Angle between Particules
+            double cosAngle = DiffX / DistanceBetween;
+            double sinAngle = DiffY / DistanceBetween;
+
+            // Computing new Speed on X and Y for Particules after collision
+
+            double VAx = DiffSpeedX * sinAngle * sinAngle - DiffSpeedY * sinAngle * cosAngle + other.SpeedX;
+            double VAy = DiffSpeedY * cosAngle * cosAngle - DiffSpeedX * sinAngle * cosAngle + other.SpeedY;
+            double VBx = DiffSpeedX * cosAngle * cosAngle + DiffSpeedY * sinAngle * cosAngle + other.SpeedX;
+            double VBy = DiffSpeedY * sinAngle * sinAngle + DiffSpeedX * sinAngle * cosAngle + other.SpeedY;
+
+            // Speed Lost factor
+            double SpeedLostFac = Math.Sqrt(1 - Simulation_Constant.SPEED_LOSS_FACTOR);
+            this.SetSpeedX(VAx * SpeedLostFac);
+            this.SetSpeedY(VAy * SpeedLostFac);
+            other.SetSpeedX(VBx * SpeedLostFac);
+            other.SetSpeedY(VBy * SpeedLostFac);
+
+
+
+        }
         internal void CollisionWithVerticalWall(Particule particule)
         {
-            double ResizeFactor = Math.Sqrt(Simulation_Constant.SPEED_LOSS_FACTOR);
+            double ResizeFactor = Math.Sqrt(1- Simulation_Constant.SPEED_LOSS_FACTOR);
             particule.SpeedX = (particule.SpeedX * -1 * ResizeFactor);
             particule.SpeedY = (particule.SpeedY * ResizeFactor);
         }
         internal void CollisionWithHorizontalWall(Particule particule)
         {
-            double ResizeFactor = Math.Sqrt(Simulation_Constant.SPEED_LOSS_FACTOR);
+            double ResizeFactor = Math.Sqrt(1- Simulation_Constant.SPEED_LOSS_FACTOR);
             particule.SpeedX = (particule.SpeedX * ResizeFactor);
             particule.SpeedY = (particule.SpeedY * -1 * ResizeFactor);
         }
@@ -92,6 +128,14 @@ namespace Maxwell_BoltzmannDistribution.Models
         internal int GetID()
         {
             return this.Id;
+        }
+        internal void SetSpeedX(double sX)
+        {
+            this.SpeedX = sX;
+        }
+        internal void SetSpeedY(double sY)
+        {
+            this.SpeedY = sY;
         }
         internal String PrintParticuleInfo()
         {

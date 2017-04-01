@@ -39,7 +39,7 @@ namespace Maxwell_BoltzmannDistribution
             Simulation_Constant.PARTICULE_RADIUS = 0.00001;
             Simulation_Constant.TIME_IN_SECONDS = 10;
             Simulation_Constant.CURRENT_GRAVITY = 9.81;
-            Simulation_Constant.SPEED_LOSS_FACTOR = 0.33;
+            Simulation_Constant.SPEED_LOSS_FACTOR = 0.001;
 
             Simulation_Constant.FLAG_END_SIMULATION = false;
             try

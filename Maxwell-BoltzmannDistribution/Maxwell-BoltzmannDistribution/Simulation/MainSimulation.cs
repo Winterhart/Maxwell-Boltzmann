@@ -35,18 +35,26 @@ namespace Maxwell_BoltzmannDistribution.Simulation
 
 
             }
+            // To Simulate all Particules and not miss any Collision will will have to increase time very very slowly...
+            double TimeStep = (Convert.ToDouble(Simulation_Constant.TIME_IN_SECONDS) / 10000 );
+            double CurrentTime = 0.00001;
+            while (CurrentTime <= Simulation_Constant.TIME_IN_SECONDS)
+            {
 
-            Console.WriteLine("ALL Particule are created");
-            Console.WriteLine(AllParticules[0].PrintParticuleInfo());
-            AllParticules[0].movePaticule(0.001);
-            Console.WriteLine(AllParticules[0].PrintParticuleInfo());
-            AllParticules[0].movePaticule(0.01);
-            Console.WriteLine(AllParticules[0].PrintParticuleInfo());
+
+
+
+                CurrentTime = CurrentTime + TimeStep;
+
+            }
+
+
 
 
 
                 // Throw that before Quiting...
-                Simulation_Constant.FLAG_END_SIMULATION = true;
+            Console.WriteLine("The time of simu : " + Simulation_Constant.TIME_IN_SECONDS + " The currentTime  " + CurrentTime + " Time Step " + TimeStep);
+            Simulation_Constant.FLAG_END_SIMULATION = true;
 
         }
 

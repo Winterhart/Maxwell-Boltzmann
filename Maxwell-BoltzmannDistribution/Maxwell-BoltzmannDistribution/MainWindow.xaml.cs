@@ -32,12 +32,12 @@ namespace Maxwell_BoltzmannDistribution
         private void Start_Sim(object sender, RoutedEventArgs e)
         {
             // Hard coded simulation for starting
-            Simulation_Constant.BOX_HEIGHT = 1.5;
-            Simulation_Constant.BOX_WIDTH = 1.5;
-            Simulation_Constant.INITIAL_SPEED = 100;
-            Simulation_Constant.NUMBER_OF_PARTICULE = 900;
-            Simulation_Constant.PARTICULE_RADIUS = 0.00001;
-            Simulation_Constant.TIME_IN_SECONDS = 10;
+            Simulation_Constant.BOX_HEIGHT = 0.5;
+            Simulation_Constant.BOX_WIDTH = 0.5;
+            Simulation_Constant.INITIAL_SPEED = 460;
+            Simulation_Constant.NUMBER_OF_PARTICULE = 5000;
+            Simulation_Constant.PARTICULE_RADIUS = 0.000000001;
+            Simulation_Constant.TIME_IN_SECONDS = 1;
             Simulation_Constant.CURRENT_GRAVITY = 9.81;
             Simulation_Constant.SPEED_LOSS_FACTOR = 0.001;
 

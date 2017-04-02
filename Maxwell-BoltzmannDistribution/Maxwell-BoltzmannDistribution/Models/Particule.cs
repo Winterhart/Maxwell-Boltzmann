@@ -94,30 +94,30 @@ namespace Maxwell_BoltzmannDistribution.Models
         /// Computing Collision with Verti. Wall
         /// </summary>
         /// <param name="particule"></param>
-        internal void CollisionWithVerticalWall(Particule particule)
+        internal void CollisionWithVerticalWall()
         {
             double ResizeFactor = Math.Sqrt(1- Simulation_Constant.SPEED_LOSS_FACTOR);
-            particule.SpeedX = (particule.SpeedX * -1 * ResizeFactor);
-            particule.SpeedY = (particule.SpeedY * ResizeFactor);
+            this.SpeedX = (this.SpeedX * -1 * ResizeFactor);
+            this.SpeedY = (this.SpeedY * ResizeFactor);
         }
         /// <summary>
         /// Computing Collision with Hori. Wall
         /// </summary>
         /// <param name="particule"></param>
-        internal void CollisionWithHorizontalWall(Particule particule)
+        internal void CollisionWithHorizontalWall()
         {
             double ResizeFactor = Math.Sqrt(1- Simulation_Constant.SPEED_LOSS_FACTOR);
-            particule.SpeedX = (particule.SpeedX * ResizeFactor);
-            particule.SpeedY = (particule.SpeedY * -1 * ResizeFactor);
+            this.SpeedX = (this.SpeedX * ResizeFactor);
+            this.SpeedY = (this.SpeedY * -1 * ResizeFactor);
         }
         /// <summary>
         /// Getting Speed of a Particule
         /// </summary>
         /// <param name="particule"></param>
         /// <returns></returns>
-        internal double getSpeed(Particule particule)
+        internal double GetSpeed()
         {
-            return Math.Sqrt((particule.SpeedX * particule.SpeedX) + (particule.SpeedY * particule.SpeedY));
+            return Math.Sqrt((this.SpeedX * this.SpeedX) + (this.SpeedY * this.SpeedY));
         }
         /// <summary>
         /// Will the particule touche each other yes or not
@@ -145,7 +145,7 @@ namespace Maxwell_BoltzmannDistribution.Models
         /// Make a particule move
         /// </summary>
         /// <param name="TimeH"></param>
-        internal void movePaticule(double TimeH){
+        internal void MoveParticule(double TimeH){
             this.PositionX = this.PositionX + (this.SpeedX * TimeH);
             this.PositionY = this.PositionY + ((this.SpeedY * TimeH) - ((Simulation_Constant.CURRENT_GRAVITY * TimeH * TimeH)/2 ));
             this.SpeedY = (this.SpeedY - (Simulation_Constant.CURRENT_GRAVITY * TimeH));

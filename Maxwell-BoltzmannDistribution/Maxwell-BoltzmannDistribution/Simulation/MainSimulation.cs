@@ -13,6 +13,7 @@ namespace Maxwell_BoltzmannDistribution.Simulation
     {
         internal Box MainBox;
         internal Particule[] AllParticules;
+        internal int[] AllDataSorted = new int[20];
         internal void Start()
         {
 
@@ -74,6 +75,43 @@ namespace Maxwell_BoltzmannDistribution.Simulation
 
             }
 
+            // Sort Data
+     
+            foreach (Particule p in AllParticules)
+            {
+                double Percentage = ( p.GetSpeed() / Simulation_Constant.INITIAL_SPEED );
+                int d = Convert.ToInt32(Percentage*100);
+                for (int i = 0; i < AllDataSorted.Length; i++)
+                {
+                   if( (d >= (5 * i )) && (d < (5* (i+1))) ){
+                       AllDataSorted[i]++;
+                       break;
+                   }
+                }
+
+
+                
+                
+                
+            }
+
+            using (XmlWriter writer = XmlWriter.Create("SortedData.xml"))
+            {
+                writer.WriteStartDocument();
+                writer.WriteStartElement("object");
+                int i = 0;
+                foreach (int d in AllDataSorted)
+                {
+                    i++;
+                    writer.WriteStartElement("SortedParticules");
+                    writer.WriteElementString("Distribution", i.ToString());
+                    writer.WriteElementString("PercentageSpeed", d.ToString());
+                    writer.WriteEndElement();
+                }
+                writer.WriteEndElement();
+                writer.WriteEndDocument();
+
+            }
             // Class Particule in Group insert them in XML data chart
 
             using (XmlWriter writer = XmlWriter.Create("Particules.xml"))

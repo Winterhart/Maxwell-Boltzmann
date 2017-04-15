@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Maxwell_BoltzmannDistribution.Models;
 using System.Xml;
+using System.IO;
 
 
 namespace Maxwell_BoltzmannDistribution.Simulation
@@ -92,7 +93,16 @@ namespace Maxwell_BoltzmannDistribution.Simulation
             string path = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
             try
             {
-                using (XmlWriter writer = XmlWriter.Create(path + @"\ParticuleDistribution.xml"))
+                
+                if (File.Exists(path + @"\ParticleDistribution.xml"))
+                {
+                    File.Delete(path + @"\ParticleDistribution.xml");
+                }
+                if (File.Exists(path + @"\Particles.xml"))
+                {
+                    File.Delete(path + @"\Particles.xml");
+                }
+                using (XmlWriter writer = XmlWriter.Create(path + @"\ParticleDistribution.xml"))
                 {
                     writer.WriteStartDocument();
                     writer.WriteStartElement("object");
@@ -111,7 +121,7 @@ namespace Maxwell_BoltzmannDistribution.Simulation
                 }
                 // Class Particule in Group insert them in XML data chart
 
-                using (XmlWriter writer = XmlWriter.Create(path + @"\Particules.xml"))
+                using (XmlWriter writer = XmlWriter.Create(path + @"\Particles.xml"))
                 {
                     writer.WriteStartDocument();
                     writer.WriteStartElement("object");

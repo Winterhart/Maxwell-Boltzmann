@@ -73,7 +73,7 @@ namespace Maxwell_BoltzmannDistribution
             }
             Mouse.OverrideCursor = null;
 
-            MessageBox.Show("...");
+            MessageBox.Show("Your Data are saved on your desktop...");
        
 
         }

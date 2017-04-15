@@ -88,49 +88,52 @@ namespace Maxwell_BoltzmannDistribution.Simulation
                        break;
                    }
                 }
-
-
-                
-                
-                
             }
-
-            using (XmlWriter writer = XmlWriter.Create("SortedData.xml"))
+            string path = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
+            try
             {
-                writer.WriteStartDocument();
-                writer.WriteStartElement("object");
-                int i = 0;
-                foreach (int d in AllDataSorted)
+                using (XmlWriter writer = XmlWriter.Create(path + @"\ParticuleDistribution.xml"))
                 {
-                    i++;
-                    writer.WriteStartElement("SortedParticules");
-                    writer.WriteElementString("Distribution", i.ToString());
-                    writer.WriteElementString("PercentageSpeed", d.ToString());
+                    writer.WriteStartDocument();
+                    writer.WriteStartElement("object");
+                    int i = 0;
+                    foreach (int d in AllDataSorted)
+                    {
+                        i++;
+                        writer.WriteStartElement("SortedParticules");
+                        writer.WriteElementString("Distribution", i.ToString());
+                        writer.WriteElementString("PercentageSpeed", d.ToString());
+                        writer.WriteEndElement();
+                    }
                     writer.WriteEndElement();
+                    writer.WriteEndDocument();
+
                 }
-                writer.WriteEndElement();
-                writer.WriteEndDocument();
+                // Class Particule in Group insert them in XML data chart
 
-            }
-            // Class Particule in Group insert them in XML data chart
-
-            using (XmlWriter writer = XmlWriter.Create("Particules.xml"))
-            {
-                writer.WriteStartDocument();
-                writer.WriteStartElement("object");
-                foreach (Particule p in AllParticules)
+                using (XmlWriter writer = XmlWriter.Create(path + @"\Particules.xml"))
                 {
-                    writer.WriteStartElement("AllParticule");
-                    writer.WriteElementString("ID", p.GetID().ToString());
-                    writer.WriteElementString("Speed", p.GetSpeed().ToString());
-                    writer.WriteElementString("PositionX", p.GetPositionX().ToString());
-                    writer.WriteElementString("PositionY", p.GetPositionY().ToString());
+                    writer.WriteStartDocument();
+                    writer.WriteStartElement("object");
+                    foreach (Particule p in AllParticules)
+                    {
+                        writer.WriteStartElement("AllParticule");
+                        writer.WriteElementString("ID", p.GetID().ToString());
+                        writer.WriteElementString("Speed", p.GetSpeed().ToString());
+                        writer.WriteElementString("PositionX", p.GetPositionX().ToString());
+                        writer.WriteElementString("PositionY", p.GetPositionY().ToString());
+                        writer.WriteEndElement();
+                    }
                     writer.WriteEndElement();
-                }
-                writer.WriteEndElement();
-                writer.WriteEndDocument();
+                    writer.WriteEndDocument();
 
+
+
+                }
             }
+            catch (Exception ee) { Console.WriteLine(ee.Message); }
+
+
 
 
 

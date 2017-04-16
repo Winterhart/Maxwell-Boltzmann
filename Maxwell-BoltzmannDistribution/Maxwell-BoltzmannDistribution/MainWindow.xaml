@@ -16,19 +16,19 @@
     	<Button Content="Start&#xD;&#xA;" Click="Start_Sim" HorizontalAlignment="Left" VerticalAlignment="Top" Width="271" Margin="74.872,420,0,0" Height="23.92" Grid.Column="2" Grid.ColumnSpan="2"/>
     	<Label Content="Enter your data and press on Start" FontSize="16" Grid.Column="1" HorizontalAlignment="Left" Margin="0,10,0,0" VerticalAlignment="Top" Width="687.64" Foreground="White" Grid.ColumnSpan="3" Height="49.04"/>
         <Label Content="BOX HEIGHT (meter)" Grid.Column="2" HorizontalAlignment="Left" Margin="0,59.04,0,0" VerticalAlignment="Top" Width="158" Foreground="White" Height="25.96"/>
-        <TextBox x:Name="BoxHeight" Grid.Column="3" HorizontalAlignment="Left" Height="25.96" Margin="0,59.04,0,0" TextWrapping="Wrap" Text="0.5" VerticalAlignment="Top" Width="159.635" Background="#FF4A4A4A" Foreground="White"/>
+        <TextBox x:Name="BoxHeight" Grid.Column="3" HorizontalAlignment="Left" Height="25.96" Margin="0,59.04,0,0" TextWrapping="Wrap" Text="1.5" VerticalAlignment="Top" Width="159.635" Background="#FF4A4A4A" Foreground="White"/>
         <Label Content="BOX WIDTH (meter)" Grid.Column="2" HorizontalAlignment="Left" Margin="1.635,105.04,0,0" VerticalAlignment="Top" Width="158" Foreground="White" Height="25.96"/>
-        <TextBox x:Name="BoxWidth" Background="#FF4A4A4A" Foreground="White" Grid.Column="3" HorizontalAlignment="Left" Height="25.96" Margin="0,109.04,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="159.635" Text="0.5"/>
+        <TextBox x:Name="BoxWidth" Background="#FF4A4A4A" Foreground="White" Grid.Column="3" HorizontalAlignment="Left" Height="25.96" Margin="0,109.04,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="159.635" Text="1.5"/>
         <Label Content="Initial Speed (m/s)" Grid.Column="2" HorizontalAlignment="Left" Margin="1.635,155,0,0" VerticalAlignment="Top" Width="158" Foreground="White" Height="25.96"/>
-        <TextBox x:Name="InitialSpeed" Background="#FF4A4A4A" Foreground="White" Grid.Column="3" HorizontalAlignment="Left" Height="25.96" Margin="0,155,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="159.635" Text="460"/>
+        <TextBox x:Name="InitialSpeed" Background="#FF4A4A4A" Foreground="White" Grid.Column="3" HorizontalAlignment="Left" Height="25.96" Margin="0,155,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="159.635" Text="1960" />
         <Label Content="Number of Particles" Grid.Column="2" HorizontalAlignment="Left" Margin="0,195,0,0" VerticalAlignment="Top" Width="158" Foreground="White" Height="25.96"/>
-        <TextBox x:Name="NumberOfParticule" Background="#FF4A4A4A" Foreground="White" Grid.Column="3" HorizontalAlignment="Left" Height="25.96" Margin="0,195,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="159.635" Text="400"/>
+        <TextBox x:Name="NumberOfParticule" Background="#FF4A4A4A" Foreground="White" Grid.Column="3" HorizontalAlignment="Left" Height="25.96" Margin="0,195,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="159.635" Text="800"/>
         <TextBox x:Name="Time" Background="#FF4A4A4A" Foreground="White" Grid.Column="3" HorizontalAlignment="Left" Height="25.96" Margin="0,234.04,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="159.635" Text="10"/>
         <Label Content="Gravity (m/s^2)" Grid.Column="2" HorizontalAlignment="Left" Margin="1.635,279.04,0,0" VerticalAlignment="Top" Width="158" Foreground="White" Height="25.96"/>
         <Label Content="Time of Exp. (second)" Grid.Column="2" HorizontalAlignment="Left" Margin="0,234.04,0,0" VerticalAlignment="Top" Width="158" Foreground="White" Height="25.96"/>
         <TextBox x:Name="Gravity" Background="#FF4A4A4A" Foreground="White" Grid.Column="3" HorizontalAlignment="Left" Height="25.96" Margin="0,279.04,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="159.635" Text="9.81"/>
         <Label Content="Speed Loss Factor  (1-f)" Grid.Column="2" HorizontalAlignment="Left" Margin="1.635,320,0,0" VerticalAlignment="Top" Width="158" Foreground="White" Height="25.96"/>
-        <TextBox x:Name="SpeedLoss" Background="#FF4A4A4A" Foreground="White" Grid.Column="3" HorizontalAlignment="Left" Height="25.96" Margin="0,320,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="159.635" Text="0.00001"/>
+        <TextBox x:Name="SpeedLoss" Background="#FF4A4A4A" Foreground="White" Grid.Column="3" HorizontalAlignment="Left" Height="25.96" Margin="0,320,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="159.635" Text="0.001"/>
         <Label Content="Particle Radius (m)" Grid.Column="2" HorizontalAlignment="Left" Margin="0,359.04,0,0" VerticalAlignment="Top" Width="158" Foreground="White" Height="25.96"/>
         <TextBox x:Name="ParticuleRadius" Background="#FF4A4A4A" Foreground="White" Grid.Column="3" HorizontalAlignment="Left" Height="25.96" Margin="0,359.04,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="159.635" Text="0.000000001"/>
        

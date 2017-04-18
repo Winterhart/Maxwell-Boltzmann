@@ -53,8 +53,8 @@ Add additional notes about how to deploy this on a live system
 
 ## Contributing
 
-Winterhart
-Add your name here if you want to help...
+* Winterhart
+* Add your name here if you want to help...
 
 ## Versioning
 

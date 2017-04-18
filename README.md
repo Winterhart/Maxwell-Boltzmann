@@ -14,6 +14,8 @@ What things you need to install the software and how to install them
 
 ```
 A Windows Machine to Install the WPF application
+.NET Framework
+If you want to contribute Visual Studio
 ```
 
 ### Installing
@@ -51,11 +53,12 @@ Add additional notes about how to deploy this on a live system
 
 ## Contributing
 
- Nothing yet
+Winterhart
+Add your name here if you want to help...
 
 ## Versioning
 
-Nothing yet 
+* V1 - First Version & Release ./publish folder
 
 ## Authors
 

@@ -1,4 +1,4 @@
-# Maxwell-BoltzmannDistribution with WPF
+# Maxwell-Boltzmann Distribution with WPF
 
 Simulation of the Maxwell-Boltzmann Distribution using WPF framework from Microsoft,
 
